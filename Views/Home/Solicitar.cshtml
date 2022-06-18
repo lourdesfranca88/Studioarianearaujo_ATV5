@@ -1,0 +1,29 @@
+@model Atendimento
+
+@{
+    ViewData["Title"] = "Marque agora mesmo seu horario";
+}
+
+<h5>@ViewData["Title"]</h5>
+
+<form method="Post" asp-action="Solicitar">
+    <p>
+         <lable asp-for="cliente">Nome do solicitante:</lable>
+         <input type="text" asp-for="cliente" required>
+    </p>
+    <p>
+         <lable asp-for="dataAtendimento">Data desejada:</lable>
+         <input type="date" asp-for="dataAtendimento" required>
+    </p>
+    <p>
+         <lable asp-for="procedimento">Procedimento:</lable>
+         <select asp-for="procedimento">
+          <option value="Retoque raiz premium">Retoque raiz premium - R$ 170,00</option>
+          <option value="Curto:10-20 cm">Curto:10-20 cm - R$ 200,00</option>
+          <option value="Médio:21-40 cm">Médio:21-40 cm - R$ 230,00</option>
+          <option value="Longo:41-55 cm">Longo:41-55 cm - R$ 270,00</option>
+          <option value="Extra-Longo:+70 cm">Extra-Longo:+70 cm - R$ 300,00</option>
+        </select>  
+    </p>
+    <input type="submit" value="Solicitar">
+</form>

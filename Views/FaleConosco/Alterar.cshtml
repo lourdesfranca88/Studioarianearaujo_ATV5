@@ -1,0 +1,31 @@
+@model FaleConosco
+@{
+    ViewData["Title"] = "Alteração";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p class="text-danger">@ViewData["mensagem"]</p>
+
+<form method="post" asp-action="Alterar">
+
+    <p>
+        <label asp-for="Nome">Nome</label>
+        <input asp-for="Nome" required>
+    </p>
+
+    <p>
+        <label asp-for="Elogios">Elogios</label>
+        <input asp-for="Elogios"required>
+    </p>
+
+    <p>
+        <label asp-for="Sugestoes">Sugestôes</label>
+        <input asp-for="Sugestoes"required>
+    </p>
+    
+    <p>
+        <input asp-for="Id" type="hidden">
+        <input type="submit" value="Alterar">
+    </p>
+    
+</form>

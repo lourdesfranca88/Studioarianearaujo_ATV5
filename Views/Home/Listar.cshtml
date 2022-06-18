@@ -1,0 +1,31 @@
+@model List<Atendimento>
+
+
+@{
+    ViewData["Title"] = "Consulte agora mesmo os procedimentos realizados";
+}
+
+<h5>@ViewData["Title"]</h5>
+
+<table class="table">
+    <tr>
+         <th>Cliente</th>
+         <th>Data</th>
+         <th>Procedimento</th>
+    </tr>
+
+    @foreach(Atendimento atend in Model){
+    
+     <tr>
+          <td>@atend.cliente</td>
+          <td>@atend.dataAtendimento</td>
+          <td>@atend.procedimento</td>
+    </tr>
+
+    }
+
+    <tr>
+         <td colspan="3">Total de atendimentos solicitados: @Solicitacoes.Totalizar()</td>
+    </tr>
+
+</table>
